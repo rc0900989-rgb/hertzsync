@@ -4,7 +4,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-img{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 header.top{position:sticky;top:0;z-index:10;background:rgba(10,11,14,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
@@ -27,7 +27,7 @@ h1 span{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-
 .lead{font-size:clamp(17px,2.2vw,20px);color:var(--text-2);max-width:680px;margin:0 auto 32px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .note{color:var(--text-3);font-size:13.5px;margin-top:16px}
-.shot{margin:56px auto 0;max-width:960px;border-radius:16px;border:1px solid var(--line);box-shadow:0 40px 120px rgba(80,90,200,.25);overflow:hidden}
+.shot{margin:56px auto 0;width:100%;max-width:min(960px,100%);border-radius:16px;border:1px solid var(--line);box-shadow:0 40px 120px rgba(80,90,200,.25);overflow:hidden}
 section{padding:104px 0;border-top:1px solid var(--line)}
 h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.01em;margin:0 0 12px;text-align:center}
 .sub{color:var(--text-2);text-align:center;max-width:640px;margin:0 auto 40px}
