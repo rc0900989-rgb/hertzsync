@@ -93,3 +93,11 @@ footer a{color:var(--text-2)}
 /* Large screens: everything one size up (125% on wide monitors), laptops and phones unchanged. */
 @media(min-width:1280px){html{zoom:1.1}}
 @media(min-width:1600px){html{zoom:1.25}}
+.download .hash{margin:14px 0 0;font-size:12px;color:var(--text-3);line-height:1.5}
+.download .hash code{display:block;word-break:break-all;font-size:11px;color:var(--text-2)}
+.safe{max-width:820px;margin:20px auto 0;padding:22px 24px;border-radius:16px;border:1px solid rgba(74,222,128,.25);background:rgba(74,222,128,.05)}
+.safe h3{margin:0 0 8px;font-size:17px;color:var(--green)}
+.safe p,.safe li{color:var(--text-2);font-size:14.5px}
+.safe p{margin:0 0 10px}
+.safe ul{margin:0 0 10px;padding-left:20px}
+.safe code{font-size:12.5px;background:rgba(255,255,255,.06);padding:1px 6px;border-radius:6px;word-break:break-all}
