@@ -14,6 +14,7 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;h
 nav.links{display:flex;gap:22px;align-items:center;font-size:14.5px}
 nav.links a{color:var(--text-2)}
 nav.links a:hover{color:var(--text);text-decoration:none}
+nav.links a.btn-primary,nav.links a.btn-primary:hover{color:#fff}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:650;font-size:15px;border:1px solid transparent;cursor:pointer;transition:filter .2s,transform .1s;color:var(--text)}
 .btn:hover{text-decoration:none;filter:brightness(1.12)}
 .btn:active{transform:scale(.98)}
