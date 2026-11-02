@@ -140,14 +140,17 @@
     <p class="hash">Version 1.0.3 · SHA-256<br><code>eb81234cc3e17f2114b7faa8e6cdbaef8097d3d327f6b10aee5d9f2bd8ae49ee</code></p>
    </div>
   </div>
-  <div class="safe">
+  <div class="safe" id="install-help">
    <h3>Safe to install: no viruses, ads or bundled software</h3>
    <p>Hertz Sync contains no malware, adware or third-party extras, and collects no data: your library never leaves your computer. The only thing it ever sends is your license key to Gumroad, to check it.</p>
    <p><b>Why Windows or macOS may warn you anyway:</b> both show a warning for any app from a new, independent developer that isn't yet signed with a paid certificate. It's about who published the file, not about anything found in it.</p>
    <ul>
     <li><b>Windows</b> "Windows protected your PC": click <i>More info</i>, then <i>Run anyway</i>.</li>
-    <li><b>macOS</b> "can't be opened": right-click Hertz Sync in Applications, choose <i>Open</i>, then <i>Open</i> again.</li>
+    <li><b>macOS 15 Sequoia or later</b> "Hertz Sync Not Opened": click <i>Done</i>, open <i>System Settings → Privacy &amp; Security</i>, scroll down to "Hertz Sync was blocked…" and click <i>Open Anyway</i>, then <i>Open Anyway</i> again and enter your Mac password.</li>
+    <li><b>macOS 11 to 14</b> "can't be opened": right-click Hertz Sync in Applications, choose <i>Open</i>, then <i>Open</i> again.</li>
+    <li><b>macOS says the app "is damaged"</b>: open Terminal, run <code>xattr -dr com.apple.quarantine "/Applications/Hertz Sync.app"</code> and open the app again. This only removes the "downloaded from the internet" mark from Hertz Sync.</li>
    </ul>
+   <p>You only do this once; after that Hertz Sync opens normally.</p>
    <p>To check your download is the original, compare its SHA-256 with the one above (Windows: <code>certutil -hashfile HertzSync-Setup-x64.exe SHA256</code>; Mac: <code>shasum -a 256 HertzSync-macOS-AppleSilicon.dmg</code>). You can also scan it at <a href="https://www.virustotal.com/">VirusTotal</a>.</p>
   </div>
   <p class="note" style="text-align:center"><a href="https://github.com/rc0900989-rgb/hertzsync/releases">All versions and release notes</a></p>
@@ -165,7 +168,7 @@
    <details><summary>Who makes Hertz Sync?</summary><p>I’m Quillon Holden, an independent developer and music producer. I built Hertz Sync under my label Vykra because my own sample folders had become impossible to search, and finding a loop that fit the track took longer than making the track. Questions or ideas? Reply to your purchase email and it comes straight to me.</p></details>
    <details><summary>Is Pro a subscription?</summary><p>No. It's a one-time $29 purchase and includes every 1.x update.</p></details>
    <details><summary>Can I get a refund?</summary><p>Pro purchases are final, so please try the free version with your own library first; it has no time limit. If Pro doesn't work as described, reply to your purchase email and we'll help. See the <a href="refund.html">refund policy</a>.</p></details>
-   <details><summary>Windows says "unknown publisher" or macOS won't open it?</summary><p>Windows: click "More info" then "Run anyway". macOS: right-click the app, choose Open, then Open again. This happens with apps from small independent developers and only the first time.</p></details>
+   <details><summary>Windows says "unknown publisher" or macOS won't open it?</summary><p>Windows: click "More info" then "Run anyway". macOS 15 or later: click Done, then go to System Settings → Privacy &amp; Security and click "Open Anyway" next to Hertz Sync. macOS 11 to 14: right-click the app, choose Open, then Open again. See the <a href="#install-help">step-by-step help</a> for details. This happens with apps from small independent developers and only the first time.</p></details>
   </div>
  </div>
 </section>
