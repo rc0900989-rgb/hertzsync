@@ -52,11 +52,16 @@ h1,.feature h3{text-wrap:balance}
 .crop-overview img{width:145%;left:-27%;top:-9%}
 .crop-dialog img{width:180%;left:-40%;top:-38%}
 .crop-dupes img{width:138%;left:-29%;top:-27%}
+.crop-slicer img{width:138%;left:-30%;top:-27%}
+.crop-kit img{width:176%;left:-66%;top:-34%}
+.crop-dig img{width:138%;left:-30%;top:-67%}
 /* Pain-led sections: a centred label over each problem, then before/after and the fix. */
 .eyebrow.center{display:block;text-align:center}
 .sub code{font-size:.9em;background:rgba(255,255,255,.06);padding:1px 6px;border-radius:6px}
 #sync .feature,#find .feature{margin:72px 0 40px}
 #cleanup .feature,#organize .feature{margin-bottom:0}
+#create .feature{margin:72px 0 40px}
+#create .feature+.feature{margin-top:96px}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:0 auto}
 .compare-col{border-radius:18px;padding:24px 26px;border:1px solid var(--line);background:var(--panel)}
 .compare-col h3{margin:0 0 12px;font-size:17px}
