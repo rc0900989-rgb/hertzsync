@@ -55,6 +55,7 @@ h1,.feature h3{text-wrap:balance}
 .crop-slicer img{width:138%;left:-30%;top:-27%}
 .crop-kit img{width:176%;left:-66%;top:-34%}
 .crop-dig img{width:138%;left:-30%;top:-67%}
+.crop-batch img{width:205%;left:-46%;top:-1%}
 /* Pain-led sections: a centred label over each problem, then before/after and the fix. */
 .eyebrow.center{display:block;text-align:center}
 .sub code{font-size:.9em;background:rgba(255,255,255,.06);padding:1px 6px;border-radius:6px}

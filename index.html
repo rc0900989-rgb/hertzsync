@@ -9,7 +9,7 @@
 <meta property="og:description" content="Audition loops in your project's tempo and key and drag them into your DAW already matched. Free download; Pro is a one-time $39.90.">
 <meta property="og:image" content="img/2-in-tempo-and-key.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <header class="top">
@@ -18,6 +18,7 @@
   <nav class="links">
    <a href="#sync">In sync</a>
    <a href="#find">Find</a>
+   <a href="#batch">Batch</a>
    <a href="#create">Create</a>
    <a href="#pricing">Pricing</a>
    <a href="#computers">Your computers</a>
@@ -70,8 +71,9 @@
    <div class="frame"><div class="crop crop-player"><img src="img/2-in-tempo-and-key.png" alt="A loop playing in the project's tempo and key" loading="lazy" width="1600" height="1200"></div></div>
   </div>
   <div class="grid">
+   <div class="card"><h3>Tempos the producer wrote down</h3><p>The tempo in a file's name, the one embedded in the file itself (ACID WAVs, Apple Loops, MP3 tags) and a folder named with one tempo are all used as is, so most loops never need guessing.</p></div>
    <div class="card"><h3>Keys from the name, or by ear</h3><p>A key in the file name is used as is. For sounds without one, Hertz Sync suggests two keys to pick from (in our tests on commercial packs, the right one was among them for about 8 in 10 loops), or tune it yourself with − / +. It remembers your choice.</p></div>
-   <div class="card"><h3>Never moves what it shouldn't</h3><p>Drums and effects are never re-pitched unless you tune them yourself, and a key it only guesses is never used without your click. A tempo it isn't sure of plays as is.</p></div>
+   <div class="card"><h3>Never moves what it shouldn't</h3><p>Drums and effects are never re-pitched unless you tune them yourself, and a key it only guesses is never used without your click. A tempo it isn't sure of plays as is, and you can set it yourself: half, double, or typed.</p></div>
    <div class="card"><h3>Any DAW that takes a dropped file</h3><p>FL Studio, Ableton Live, Logic Pro, Studio One, Reaper, Cubase, Bitwig. Matched copies are standard WAV files kept in Music/Hertz Sync/Synced Sounds, so your projects keep finding them.</p></div>
   </div>
  </div>
@@ -94,7 +96,7 @@
   <div class="grid">
    <div class="card"><h3>Find similar sounds</h3><p>Found the kick that works? Get the closest matches in your library, ranked by an on-device AI, by how they sound, not how they're named. <b>Pro</b></p></div>
    <div class="card"><h3>Filters that fit the track</h3><p>BPM range, length, and only sounds that fit your project's key. <b>Pro</b></p></div>
-   <div class="card"><h3>Collections</h3><p>A kit per project, without moving a file. Free: favorites + 2. <b>Pro:</b> unlimited.</p></div>
+   <div class="card"><h3>Collections</h3><p>A kit per project, without moving a file. Free and unlimited.</p></div>
   </div>
  </div>
 </section>
@@ -126,9 +128,31 @@
  </div>
 </section>
 
+<section id="batch">
+ <div class="wrap">
+  <span class="eyebrow center">New in 1.4 · Renaming free, processing Pro</span>
+  <h2>One recipe for a whole pack</h2>
+  <p class="sub">Run the same steps over a folder, a pack, your selection or your whole library, and see every result before anything is written.</p>
+  <div class="feature">
+   <div class="feature-text">
+    <span class="eyebrow">Batch processing</span>
+    <h3>Your originals stay exactly as they are</h3>
+    <p>Pick a recipe or build your own: rename by tempo and key, cut silence off one-shots, smooth every edge so nothing clicks, even out loudness, match everything to your project's tempo and key, one sample rate, WAV or FLAC. Preview every new name and listen before and after first.</p>
+    <p>The results go to a new folder next to your library, with the same folders inside, so your DAW projects keep finding the originals. Undo sends the new folder to the Recycle Bin. Changing files where they are is there too, only when you turn it on, with a warning and a full Undo.</p>
+   </div>
+   <div class="frame"><div class="crop crop-batch"><img src="img/11-batch.png" alt="Batch processing: a recipe, its steps, and a preview of every new file before it is made" loading="lazy" width="1600" height="1200"></div></div>
+  </div>
+  <div class="grid">
+   <div class="card"><h3>Loudness that keeps a kit's balance</h3><p>One-shots are evened out by peak, so a kick stays louder than a hat; loops by LUFS. Each sound shows which one it gets.</p></div>
+   <div class="card"><h3>Names you can trust</h3><p>Only a tempo or key the producer wrote down, or one you set, goes into a name. Nothing guessed is ever written.</p></div>
+   <div class="card"><h3>Renaming is free</h3><p>A recipe that only renames runs on the free plan. Trimming, fades, loudness, matching and format changes are part of Pro.</p></div>
+  </div>
+ </div>
+</section>
+
 <section id="create">
  <div class="wrap">
-  <span class="eyebrow center">New in 1.2 · Pro</span>
+  <span class="eyebrow center">Pro</span>
   <h2>Your packs, turned into new sounds</h2>
   <p class="sub">The loops you already own become hits, kits and fresh ideas, matched to your track and ready to drag in.</p>
   <div class="feature">
@@ -190,7 +214,8 @@
      <li>Hear loops in your project's tempo and key</li>
      <li>Drag sounds into your DAW, 5 a day already matched</li>
      <li>Preview the slicer, kit builder and starter packs</li>
-     <li>Favorites + 2 collections, 1 kit</li>
+     <li>Batch renaming by tempo and key</li>
+     <li>Unlimited collections, 1 kit</li>
     </ul>
     <a class="btn btn-ghost" href="#download">Download free</a>
    </div>
@@ -200,10 +225,11 @@
     <ul>
      <li>Everything in Free, no sound limit</li>
      <li>Every drag already in your project's tempo and key</li>
+     <li>Batch processing: trim, fades, loudness, match, WAV or FLAC</li>
      <li>Slicer, kit builder, starter packs and today's dig</li>
      <li>Find similar sounds (on-device AI)</li>
      <li>BPM, length and key filters</li>
-     <li>Unlimited collections, 5 extra skins</li>
+     <li>5 extra skins</li>
      <li>3 computers at a time, move Pro yourself anytime</li>
     </ul>
     <a class="btn btn-primary" href="https://gumroad.com/l/nphruc">Get Pro · $39.90</a>
