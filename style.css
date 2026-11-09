@@ -332,3 +332,7 @@ footer b{font-weight:500;color:var(--text-2)}
 /* Scroll cue sits at the very bottom and never under the text */
 .scroll-cue{bottom:6px;width:36px;height:18px}
 .scroll-cue svg{width:26px;height:10px}
+
+/* Launch film in the hero, in place of the screenshot: same width and corners, 16:9. */
+.film{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 30px 90px rgba(40,50,160,.35)}
+.film iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
