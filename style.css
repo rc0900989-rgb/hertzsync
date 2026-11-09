@@ -330,5 +330,5 @@ footer b{font-weight:500;color:var(--text-2)}
 .scrolled .scroll-cue{opacity:0;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.scroll-cue svg{animation:none}}
 /* Scroll cue sits at the very bottom and never under the text */
-.hero-grid{padding-bottom:72px}
-.scroll-cue{bottom:8px}
+.scroll-cue{bottom:6px;width:36px;height:18px}
+.scroll-cue svg{width:26px;height:10px}
