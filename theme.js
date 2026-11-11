@@ -1,4 +1,4 @@
-// Theme (light by default, remembered per visitor) and gentle scroll reveals.
+// Day (white) by default, night (graphite) on toggle, remembered per visitor; gentle scroll reveals.
 (function () {
   var root = document.documentElement;
   var saved = null;
@@ -17,31 +17,38 @@
       setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
 
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var targets = document.querySelectorAll('.hero-text, .hero .shot, .head, .compare, .feature-text, .frame, .grid .card, .plan, .download .card, .safe, .seats, .faq details');
-    // Scroll cue fades once the visitor starts scrolling.
-    var onScroll = function () { root.classList.toggle('scrolled', window.scrollY > 40); };
-    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-
-    // Hero film: plays only while on screen, never with reduced motion.
-    document.querySelectorAll('video[autoplay]').forEach(function (v) {
-      if (reduce) { v.pause(); v.removeAttribute('autoplay'); return; }
-      if (!('IntersectionObserver' in window)) return;
-      new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); });
-      }, { threshold: 0.2 }).observe(v);
+    // The film loads only when asked: no request to YouTube before the click.
+    var film = document.querySelector('.film[data-yt]');
+    if (film) film.addEventListener('click', function () {
+      if (film.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + film.dataset.yt + '?rel=0&modestbranding=1&playsinline=1&autoplay=1';
+      f.title = 'Hertz Sync: every loop in your tempo and key';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.referrerPolicy = 'strict-origin-when-cross-origin'; f.allowFullscreen = true;
+      film.textContent = ''; film.appendChild(f);
     });
+
+    var hdr = document.querySelector('header.top');
+    var progress = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (hdr) hdr.style.setProperty('--p', max > 0 ? Math.min(1, window.scrollY / max).toFixed(3) : 0);
+    };
+    window.addEventListener('scroll', progress, { passive: true }); progress();
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduce || !('IntersectionObserver' in window)) return;
+    var targets = document.querySelectorAll('.head, .compare, .feature, .works, .grid .card, .tile, .plan, .download .card, .safe, .seats, .faq details');
     targets.forEach(function (el) {
       el.classList.add('reveal');
-      var sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
-      if (el.matches('.grid .card, .plan, .download .card, .faq details')) el.style.transitionDelay = Math.min(sibs, 4) * 80 + 'ms';
+      var i = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      if (el.matches('.grid .card, .tile, .plan, .download .card, .faq details')) el.style.transitionDelay = Math.min(i, 4) * 70 + 'ms';
     });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
     targets.forEach(function (el) { io.observe(el); });
   });
 })();

@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hertz Sync by Vykra – your sample library, sorted and in sync</title>
-<meta name="description" content="Find, sort and audition your samples in your project's tempo and key, then drag them into FL Studio, Ableton Live, Logic Pro or Studio One already matched. Free download for Windows and macOS.">
-<meta property="og:title" content="Hertz Sync – your sample library, sorted and in sync">
+<meta name="theme-color" content="#14151a">
+<title>Hertz Sync – every loop in your track's tempo and key</title>
+<meta name="description" content="Hear every loop and one-shot in your project's tempo and key before you drag it in, then drop it into FL Studio, Ableton Live, Logic Pro or Studio One already matched. Sorting, duplicate cleanup and kit building included. Free for Windows and macOS.">
+<meta property="og:title" content="Hertz Sync – every loop in your track's tempo and key">
 <meta property="og:description" content="Audition loops in your project's tempo and key and drag them into your DAW already matched. Free download; Pro is a one-time $39.90.">
-<meta property="og:image" content="img/2-in-tempo-and-key.png">
+<meta property="og:image" content="img/v2/player.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=35">
+<link rel="stylesheet" href="style.css?v=37">
 <script src="theme.js"></script>
 </head>
 <body>
@@ -24,39 +25,84 @@
    <a href="#pricing">Pricing</a>
    <a href="#computers">Your computers</a>
    <a href="#faq">FAQ</a>
-   <a class="btn btn-primary btn-sm" href="#download">Download free</a><button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
+   <a class="btn btn-primary btn-sm" href="#download">Download free</a><button class="theme-toggle" type="button" aria-label="Switch between night and day"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
   </nav>
  </div>
 </header>
 
 <main>
-<section class="hero" style="border-top:0">
- <div class="hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="video/hero-poster.jpg?v=2"><source src="video/hero-loop.mp4?v=2" type="video/mp4"></video></div>
+<section class="hero">
  <div class="wrap">
-  <div class="hero-grid">
-   <div class="hero-text">
-    <h1>Hear every loop <span>in your track's tempo and key.</span></h1>
-    <p class="lead">Browse your samples at your project's tempo and key. What you drag into the DAW already fits.</p>
+  <div class="hero-top">
+   <h1>Hear every loop in your track's tempo and key.</h1>
+   <div class="hero-side">
+    <p class="lead">Set your project's tempo and key once. Every loop you browse plays in it, and what you drag into your DAW arrives already matched.</p>
     <div class="cta">
      <a class="btn btn-primary" href="#download">Download free</a>
      <a class="btn btn-ghost" href="https://gumroad.com/l/nphruc">Get Pro · $39.90 once</a>
     </div>
-    <p class="note hero-note">Windows 10/11 · macOS 11+ · Works with FL Studio, Ableton, Logic, Studio One and more · Files stay on your computer</p>
+    <ul class="facts"><li>Windows 10/11</li><li>macOS 11+</li><li>Files stay on your computer</li></ul>
    </div>
-   <a class="scroll-cue" href="#film" aria-label="Scroll down"><svg viewBox="0 0 26 10" width="26" height="10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l11 6 11-6"/></svg></a>
   </div>
-  <div class="shot film" id="film"><iframe src="https://www.youtube-nocookie.com/embed/0bkEMHHkZIo?rel=0&amp;modestbranding=1&amp;playsinline=1" title="Hertz Sync: every loop in your tempo and key" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+  <!-- The product's job in one loop: drag a loop out of Hertz Sync into the DAW and it lands in time and in key. -->
+  <div class="rig" id="rig" aria-label="Demo: a loop is dragged from Hertz Sync into a DAW and lands matched to the project">
+   <div class="rig-bar">
+    <div class="rig-led"><i aria-hidden="true"></i>Sync</div>
+    <div class="rig-cell">
+     <button class="rig-step" type="button" data-bpm="-4" aria-label="Slower">−</button>
+     <span class="rig-fig" id="rig-bpm">120</span>
+     <button class="rig-step" type="button" data-bpm="4" aria-label="Faster">+</button>
+     <span class="rig-unit"><b>BPM</b>your project</span>
+    </div>
+    <div class="rig-cell">
+     <div class="rig-keys" role="group" aria-label="Project key"></div>
+    </div>
+    <p class="rig-say" id="rig-say" aria-live="polite"></p>
+   </div>
+   <div class="scene">
+    <div class="pane">
+     <p class="pane-title">Your library</p>
+     <ul class="loops">
+      <li class="loop" id="loop-main"><span class="name">Dusty_Keys_98_F#m</span><span class="meta">98 BPM · F♯ minor</span><i class="mini" aria-hidden="true"></i></li>
+      </ul>
+     <div class="ab" role="group" aria-label="Show the loop as recorded or in your project">
+      <button class="ab-btn" type="button" data-mode="raw" aria-pressed="false">As recorded</button>
+      <button class="ab-btn is-main" type="button" data-mode="synced" aria-pressed="true">In your project</button>
+     </div>
+    </div>
+    <div class="pane">
+     <p class="pane-title">Your DAW <span id="rig-now">120 BPM · A minor</span></p>
+     <div class="timeline" id="timeline">
+      <div class="ruler"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+      <div class="lane"><b style="left:0;width:50%"><em>Drums</em></b><b style="left:50%;width:50%"></b></div>
+      <div class="lane"><b style="left:0;width:25%"><em>Bass</em></b><b style="left:25%;width:75%"></b></div>
+      <div class="lane" id="lane-keys"><b style="left:0;width:25%"><em>Keys</em></b><b class="placed" id="placed" style="left:25%;width:25%"><span class="placed-bars"></span><em></em></b></div>
+      <i class="snap" style="left:25%"></i><i class="snap" style="left:50%"></i>
+     </div>
+    </div>
+   </div>
+   <div class="ghost" id="ghost" aria-hidden="true"><span class="ghost-bars"></span><span class="ghost-text"><b>Dusty_Keys</b><small></small></span></div>
+   <svg class="cursor" id="cursor" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 3l14 8-6 1.6L9.6 19z" fill="#fff" stroke="#14151a" stroke-width="1.5" stroke-linejoin="round"/></svg>
+   <p class="rig-foot">Illustration. Free: 5 matched drags a day. <span class="tag pro">Pro</span> unlimited.</p>
+  </div>
+ </div>
  </div>
 </section>
 
-<!-- Sections follow the pains producers have, most frequent first: fitting loops to the track
-     (every session), finding the right sound (daily), cleaning up (once), sorting on disk
-     (occasionally), and trust in what they install and pay for. Detail shrinks in that order. -->
-<section id="sync" data-label="In sync">
+<section class="film-sec" id="film">
+ <div class="wrap">
+  <div class="film" data-yt="0bkEMHHkZIo">
+   <button class="film-play" type="button" aria-label="Play the Hertz Sync film"><span class="film-tri" aria-hidden="true"></span><span class="film-cap"><b>Watch the film</b><small>Every loop in your tempo and key</small></span></button>
+  </div>
+ </div>
+</section>
+
+<section id="sync">
  <div class="wrap">
   <div class="head">
-  <h2>A loop that sounds right on its own rarely fits your track</h2>
-  <p class="sub">It's at the wrong tempo and in the wrong key, so you find out only after dragging it in, warping it and re-pitching it. Do that twenty times and the idea is gone.</p>
+   <h2>A loop that sounds right rarely fits your track</h2>
+   <p class="sub">Wrong tempo, wrong key. You find out after dragging it in, warping it and re-pitching it. Twenty times a session, and the idea is gone.</p>
   </div>
   <div class="compare">
    <div class="compare-col before">
@@ -66,139 +112,53 @@
    <div class="compare-col after">
     <h3>With Hertz Sync</h3>
     <ol><li>Set your project's tempo and key once</li><li>Browse with ↑ ↓: every loop already plays in your tempo and key</li><li>Drag in the one that fits. Done.</li></ol>
+    <p class="result">Same loop, already in time and in key.</p>
    </div>
   </div>
   <div class="feature">
    <div class="feature-text">
-    <span class="eyebrow">Listen free · drag matched with Pro</span>
+    <div class="tags"><span class="tag">Hear it: free</span><span class="tag pro">Drag it in matched: Pro</span></div>
     <h3>Hear it in your project before you drop it</h3>
-    <p>Loops are stretched to your tempo and moved to your key as you browse, with a spectral stretcher that keeps drums tight and chords clean. Copies come out a whole number of beats long and loop without a click, so they sit on your DAW's grid.</p>
-    <p>With Pro, what you drag in arrives exactly as you heard it: no warping or re-pitching on the timeline.</p>
+    <p>Loops stretch to your tempo and move to your key as you browse. A spectral stretcher keeps drums tight and chords clean, and every copy is a whole number of beats long, so it loops without a click.</p>
+    <p>With Pro, what you drag in arrives exactly as you heard it. No warping or re-pitching on the timeline.</p>
    </div>
-   <div class="frame"><div class="crop crop-player"><img src="img/2-in-tempo-and-key.png" alt="A loop playing in the project's tempo and key" loading="lazy" width="1600" height="1200"></div></div>
+   <div class="shot-frame"><img src="img/v2/player.png" alt="Hertz Sync playing Dusty_Keys_98_F#m in the project's 120 BPM, A minor: the player shows it moved to key by 3 semitones" width="1440" height="900"></div>
   </div>
+  <div class="works"><span>Drops into</span><b>FL Studio</b><b>Ableton Live</b><b>Logic Pro</b><b>Studio One</b><b>Reaper</b><b>Cubase</b><b>Bitwig</b></div>
+  <h3 class="trust-title">Why you can trust what you hear</h3>
   <div class="grid">
-   <div class="card"><h3>Tempos the producer wrote down</h3><p>The tempo in a file's name, the one embedded in the file itself (ACID WAVs, Apple Loops, MP3 tags) and a folder named with one tempo are all used as is, so most loops never need guessing.</p></div>
-   <div class="card"><h3>Keys from the name, or by ear</h3><p>A key in the file name is used as is. For sounds without one, Hertz Sync suggests two keys to pick from (in our tests on commercial packs, the right one was among them for about 8 in 10 loops), or tune it yourself with − / +. It remembers your choice.</p></div>
-   <div class="card"><h3>Never moves what it shouldn't</h3><p>Drums and effects are never re-pitched unless you tune them yourself, and a key it only guesses is never used without your click. A tempo it isn't sure of plays as is, and you can set it yourself: half, double, or typed.</p></div>
-   <div class="card"><h3>Any DAW that takes a dropped file</h3><p>FL Studio, Ableton Live, Logic Pro, Studio One, Reaper, Cubase, Bitwig. Matched copies are standard WAV files kept in Music/Hertz Sync/Synced Sounds, so your projects keep finding them.</p></div>
+   <div class="card"><h3>Tempos the producer wrote down</h3><p>The tempo in a file's name, in its metadata (ACID WAVs, Apple Loops, MP3 tags) or in its folder name is used as is. Most loops never need guessing.</p></div>
+   <div class="card"><h3>Keys from the name, or by ear</h3><p>A key in the file name is used as is. Without one, Hertz Sync suggests two keys to pick from (the right one was among them for about 8 in 10 commercial loops in our tests), or you tune it with − / +.</p></div>
+   <div class="card"><h3>Never moves what it shouldn't</h3><p>Drums and effects aren't re-pitched unless you tune them, and a guessed key is never used without your click. A tempo it isn't sure of plays as is, and you can set it.</p></div>
+   <div class="card"><h3>Plain files your projects keep finding</h3><p>Matched copies are standard WAVs in Music/Hertz Sync/Synced Sounds and are never moved, so a project you open next year still finds every one.</p></div>
   </div>
  </div>
 </section>
 
-<section id="find" class="band" data-label="Find">
+<section id="more" class="band">
  <div class="wrap">
   <div class="head">
-  <h2>You own the sound. You just can't find it.</h2>
-  <p class="sub">Splice downloads, free packs and your own recordings, spread over a dozen folders with names like <code>audio_042_final2.wav</code>.</p>
+   <h2>Everything else your sample folder needs</h2>
+   <p class="sub">Sync is why you open it. These are why you keep it open.</p>
   </div>
-  <div class="feature">
-   <div class="feature-text">
-    <span class="eyebrow">Free</span>
-    <h3>Every pack in one library, sorted by what it is</h3>
-    <p>Add your sample folders and Hertz Sync sorts them into Drums, Bass, Synth, Keys, Guitar, Strings, Brass, Vocals and FX from the names packs already use. Loops that mix instruments are grouped by style: lo-fi, R&amp;B, trap, house and more. Nothing on disk moves.</p>
-    <p>Search across everything, then audition with the arrow keys: each sound plays as you land on it.</p>
-   </div>
-   <div class="frame"><div class="crop crop-overview"><img src="img/1-overview.png" alt="Library overview with categories, duplicates and health check" loading="lazy" width="1600" height="1200"></div></div>
-  </div>
-  <div class="grid">
-   <div class="card"><h3>Find similar sounds</h3><p>Found the kick that works? Get the closest matches in your library, ranked by an on-device AI, by how they sound, not how they're named. <b>Pro</b></p></div>
-   <div class="card"><h3>Filters that fit the track</h3><p>BPM range, length, and only sounds that fit your project's key. <b>Pro</b></p></div>
-   <div class="card"><h3>Collections</h3><p>A kit per project, without moving a file. Free and unlimited.</p></div>
+  <div class="tiles">
+   <p class="tiles-label">Free, with no limit on time</p>
+   <article class="tile" id="find"><div class="tile-img crop-main" style="--t:-4%"><img src="img/v2/overview.png" alt="Library overview with categories and styles" width="1440" height="900"></div><div class="tile-body"><div class="tile-head"><h3>Find any sound you own</h3><span class="tag">Free</span></div><p>Every pack in one library, sorted into Drums, Bass, Keys, Vocals, FX and more, and loops by style. Search, then audition with the arrow keys. Collections give each project its own kit without moving a file.</p></div></article>
+   <article class="tile"><div class="tile-img crop-main" style="--t:-28.5%"><img src="img/v2/duplicates.png" alt="Duplicate copies found after the first scan" width="1440" height="900"></div><div class="tile-body"><div class="tile-head"><h3>Clean up and sort</h3><span class="tag">Free</span></div><p>Finds byte-identical copies and files that won’t open, across every folder. Copy the library into real category folders without breaking old projects, with one-click undo.</p></div></article>
+   <p class="tiles-label">With Pro</p>
+   <article class="tile is-wide" id="batch"><div class="tile-img crop-main" style="--t:-33.3%"><img src="img/v2/batch.png" alt="Batch processing recipe with a preview of every file" width="1440" height="900"></div><div class="tile-body"><div class="tile-head"><h3>Batch processing</h3><span class="tag pro">Pro</span></div><p>One recipe for a whole pack: trim, fade, even out loudness, match to your project, WAV or FLAC. Originals stay as they are. Renaming by tempo and key is free.</p></div></article>
+   <article class="tile is-wide" id="create"><div class="tile-img crop-main" style="--t:-33.3%"><img src="img/v2/slicer.png" alt="A drum loop cut into slices named by ear" width="1440" height="900"></div><div class="tile-body"><div class="tile-head"><h3>Slicer</h3><span class="tag pro">Pro</span></div><p>Cuts drum loops on every hit and names each slice by ear: Kick, Snare, Hat. Melodic loops are cut on the beat. Slices become files in your library.</p></div></article>
+   <article class="tile is-wide"><div class="tile-img crop-main" style="--t:-25%"><img src="img/v2/kits.png" alt="A kit filled by ear from one kick" width="1440" height="900"></div><div class="tile-body"><div class="tile-head"><h3>Kit builder</h3><span class="tag pro">Pro</span></div><p>Pick a kick and “Fill the kit” finds the closest snare, clap, hats and perc in every pack you own, by how they sound. Export it for your sampler.</p></div></article>
+   <article class="tile is-wide"><div class="tile-img crop-dig"><img src="img/v2/dig.png" alt="Today’s dig: sounds you own but never played" width="1440" height="900"></div><div class="tile-body"><div class="tile-head"><h3>Today’s dig and starter packs</h3><span class="tag pro">Pro</span></div><p>Sounds you bought but never played, dug out daily. Or a song’s worth of parts in one tempo and key, or a folder of matched loops for your track.</p></div></article>
   </div>
  </div>
 </section>
 
-<section id="cleanup" class="band" data-label="Clean up">
+<section id="pricing">
  <div class="wrap">
-  <div class="feature">
-   <div class="feature-text">
-    <span class="eyebrow">The problem you don't see · Free</span>
-    <h3>Gigabytes of duplicates and files that won't open</h3>
-    <p>Packs overlap and downloads repeat. The first scan shows how many byte-identical copies you have, how much space they take, and which files are damaged or unreadable, across every folder you add.</p>
-    <p>Pick which copy to keep (it suggests one); the extras go to the Recycle Bin (Windows) or the Trash (Mac), so you can always get them back.</p>
-   </div>
-   <div class="frame"><div class="crop crop-dupes"><img src="img/5-duplicates.png" alt="After the first scan: 60 sets of identical copies, 55.1 MB that could be freed" loading="lazy" width="1600" height="1200"></div></div>
-  </div>
- </div>
-</section>
-
-<section id="organize" class="band" data-label="Organize">
- <div class="wrap">
-  <div class="feature">
-   <div class="feature-text">
-    <span class="eyebrow">When you're ready to tidy up · Free</span>
-    <h3>Real folders, without breaking old projects</h3>
-    <p>Copy your whole library into one new folder with a subfolder per category. Your originals stay where they are, so older DAW projects still open. Every copy is checked against its original, and one click undoes it all.</p>
-   </div>
-   <div class="frame"><div class="crop crop-dialog"><img src="img/3-sort-into-folders.png" alt="Preview of sounds copied into category folders" loading="lazy" width="1600" height="1200"></div></div>
-  </div>
- </div>
-</section>
-
-<section id="batch" data-label="Batch">
- <div class="wrap">
-  <span class="eyebrow center">New in 1.4 · Renaming free, processing Pro</span>
-  <div class="head">
-  <h2>One recipe for a whole pack</h2>
-  <p class="sub">Run the same steps over a folder, a pack, your selection or your whole library, and see every result before anything is written.</p>
-  </div>
-  <div class="feature">
-   <div class="feature-text">
-    <span class="eyebrow">Batch processing</span>
-    <h3>Your originals stay exactly as they are</h3>
-    <p>Pick a recipe or build your own: rename by tempo and key, cut silence off one-shots, smooth every edge so nothing clicks, even out loudness, match everything to your project's tempo and key, one sample rate, WAV or FLAC. Preview every new name and listen before and after first.</p>
-    <p>The results go to a new folder next to your library, with the same folders inside, so your DAW projects keep finding the originals. Undo sends the new folder to the Recycle Bin. Changing files where they are is there too, only when you turn it on, with a warning and a full Undo.</p>
-   </div>
-   <div class="frame"><div class="crop crop-batch"><img src="img/11-batch.png" alt="Batch processing: a recipe, its steps, and a preview of every new file before it is made" loading="lazy" width="1600" height="1200"></div></div>
-  </div>
-  <div class="grid">
-   <div class="card"><h3>Loudness that keeps a kit's balance</h3><p>One-shots are evened out by peak, so a kick stays louder than a hat; loops by LUFS. Each sound shows which one it gets.</p></div>
-   <div class="card"><h3>Names you can trust</h3><p>Only a tempo or key the producer wrote down, or one you set, goes into a name. Nothing guessed is ever written.</p></div>
-  </div>
- </div>
-</section>
-
-<section id="create" class="band" data-label="Create">
- <div class="wrap">
-  <span class="eyebrow center">Pro</span>
-  <div class="head">
-  <h2>Your packs, turned into new sounds</h2>
-  <p class="sub">The loops you already own become hits, kits and fresh ideas, matched to your track and ready to drag in.</p>
-  </div>
-  <div class="feature">
-   <div class="feature-text">
-    <span class="eyebrow">Slicer</span>
-    <h3>Cut any loop into sounds of your own</h3>
-    <p>Drum loops are cut on every hit and each slice is named by ear: Kick, Snare, Hat. Melodic loops are cut on the beat. Lock the slices you like, move the sensitivity, and the rest re-cut around them.</p>
-    <p>The slices become files in your library, ready for the kit builder. Seeing the cuts and listening are free; writing the files is Pro.</p>
-   </div>
-   <div class="frame"><div class="crop crop-slicer"><img src="img/7-slicer.png" alt="A drum loop cut into 30 slices, each named by what it is" loading="lazy" width="1600" height="1200"></div></div>
-  </div>
-  <div class="feature">
-   <div class="feature-text">
-    <span class="eyebrow">Kit builder</span>
-    <h3>A drum kit from every pack you own</h3>
-    <p>Pick a kick and "Fill the kit" finds the closest snare, clap, hats, perc and cymbal in your whole library, by how they sound. Swap any slot, keep as many kits as you like, and export each one as a numbered folder for your sampler or drum machine.</p>
-   </div>
-   <div class="frame"><div class="crop crop-kit"><img src="img/8-kit-builder.png" alt="A kit filled by ear from one kick: snare, clap, hats, perc and cymbal" loading="lazy" width="1600" height="1200"></div></div>
-  </div>
-  <div class="feature">
-   <div class="feature-text">
-    <span class="eyebrow">Today's dig</span>
-    <h3>The packs you bought, finally heard</h3>
-    <p>Every day Hertz Sync digs out sounds you own but have never played, a different category or style on every card. Or have it draw a song's worth of parts that play together: one key, one tempo, drums, bass, chords and a lead. Starter packs go one step further: a whole folder of matched drum loops, bass, pads and hits for your track, ready to drag in.</p>
-   </div>
-   <div class="frame"><div class="crop crop-dig"><img src="img/6-todays-dig.png" alt="Today's dig: eight sounds from the library that were never played" loading="lazy" width="1600" height="1200"></div></div>
-  </div>
- </div>
-</section>
-
-<section id="pricing" data-label="Pricing">
- <div class="wrap">
-  <div class="head">
-  <h2>Free to use. Pro once, for good.</h2>
-  <p class="sub">No subscription. Buy Pro once and every 1.x update is included.</p>
+  <div class="head is-center">
+   <h2>Free to use. Pro once, for good.</h2>
+   <p class="sub">No subscription. Buy Pro once and every 1.x update is included.</p>
   </div>
   <div class="pricing">
    <div class="plan">
@@ -210,10 +170,9 @@
      <li>Categories from file and folder names</li>
      <li>Sort into real folders on disk, with undo</li>
      <li>Hear loops in your project's tempo and key</li>
-     <li>Drag sounds into your DAW, 5 a day already matched</li>
+     <li>Drag into your DAW, 5 a day already matched</li>
      <li>Preview the slicer, kit builder and starter packs</li>
-     <li>Batch renaming by tempo and key</li>
-     <li>Unlimited collections, 1 kit</li>
+     <li>Batch renaming, unlimited collections, 1 kit</li>
     </ul>
     <a class="btn btn-ghost" href="#download">Download free</a>
    </div>
@@ -221,27 +180,26 @@
     <h3>Pro</h3>
     <div class="price">$39.90 <small>one-time</small></div>
     <ul>
+     <li><b>Every drag already in your tempo and key, unlimited</b></li>
      <li>Everything in Free, no sound limit</li>
-     <li>Every drag already in your project's tempo and key</li>
      <li>Batch processing: trim, fades, loudness, match, WAV or FLAC</li>
      <li>Slicer, kit builder, starter packs and today's dig</li>
      <li>Find similar sounds (on-device AI)</li>
      <li>BPM, length and key filters</li>
-     <li>5 extra skins</li>
      <li>3 computers at a time, move Pro yourself anytime</li>
     </ul>
-    <a class="btn btn-primary" href="https://gumroad.com/l/nphruc">Get Pro · $39.90</a>
+    <a class="btn btn-brass" href="https://gumroad.com/l/nphruc">Get Pro · $39.90</a>
    </div>
   </div>
   <p class="note">Secure checkout by Gumroad. Your license key arrives by email. Not happy? Full refund within 7 days.</p>
  </div>
 </section>
 
-<section id="download" class="band" data-label="Download">
+<section id="download" class="band">
  <div class="wrap">
-  <div class="head">
-  <h2>Download Hertz Sync</h2>
-  <p class="sub">Free download. Pro unlocks inside the app with your license key.</p>
+  <div class="head is-center">
+   <h2>Download Hertz Sync</h2>
+   <p class="sub">Free download. Pro unlocks inside the app with your license key.</p>
   </div>
   <div class="download">
    <div class="card">
@@ -257,41 +215,45 @@
     <p class="hash">Version 1.4.2 · SHA-256<br><code>92e981a57df6662498e3056a050d67be47819f56e837ad272ad8506a25a085b2</code></p>
    </div>
   </div>
-  <div class="safe" id="whats-new">
-   <h3>What’s new in 1.4.2</h3>
-   <p>A small release that makes the library easier to move around in, and tells you more when Sync can’t be sure of a tempo.</p>
-   <ul>
-    <li><strong>Style and instrument work together.</strong> On a style page, pick an instrument; on an instrument page, pick a style. For example Lo-fi, then Drums.</li>
-    <li><strong>A clearer sidebar.</strong> Bigger Instruments and Styles headings and a coloured star for each style. Melodic loops with no style are now called Unstyled loops and sit under “more”.</li>
-    <li><strong>Sync tells you when a loop has no tempo it can trust.</strong> A quiet line in the player, and one notice when you drag it out. One-shots never show it.</li>
-    <li><strong>Pick between two tempos.</strong> When a loop’s length fits two tempos equally well, such as 90 or 135 BPM, choose the right one with one click. It is kept when you scan again.</li>
-    <li><strong>The toolbar stays on one row</strong> in narrower windows.</li>
-   </ul>
-   <p><a href="https://github.com/rc0900989-rgb/hertzsync/releases">All versions and release notes</a></p>
-  </div>
-  <div class="safe" id="install-help">
-   <h3>Safe to install: no viruses, ads or bundled software</h3>
-   <p>Hertz Sync contains no malware, adware or third-party extras, and collects no data: your library never leaves your computer. Online, it only checks your license key (with an anonymous id for your computer) and asks GitHub whether a newer version is out.</p>
-   <p><b>Why Windows or macOS may warn you anyway:</b> both show a warning for any app from a new, independent developer that isn't yet signed with a paid certificate. It's about who published the file, not about anything found in it.</p>
-   <ul>
-    <li><b>Windows</b> "Windows protected your PC": click <i>More info</i>, then <i>Run anyway</i>.</li>
-    <li><b>macOS 15 Sequoia or later</b> "Hertz Sync Not Opened": click <i>Done</i>, open <i>System Settings → Privacy &amp; Security</i>, scroll down to "Hertz Sync was blocked…" and click <i>Open Anyway</i>, then <i>Open Anyway</i> again and enter your Mac password.</li>
-    <li><b>macOS 11 to 14</b> "can't be opened": right-click Hertz Sync in Applications, choose <i>Open</i>, then <i>Open</i> again.</li>
-    <li><b>macOS says the app "is damaged"</b>: open Terminal, run <code>xattr -dr com.apple.quarantine "/Applications/Hertz Sync.app"</code> and open the app again. This only removes the "downloaded from the internet" mark from Hertz Sync.</li>
-   </ul>
-   <p>You only do this once; after that Hertz Sync opens normally.</p>
-   <p>To check your download is the original, compare its SHA-256 with the one above (Windows: <code>certutil -hashfile HertzSync-Setup-x64.exe SHA256</code>; Mac: <code>shasum -a 256 HertzSync-macOS-AppleSilicon.dmg</code>). You can also scan it at <a href="https://www.virustotal.com/">VirusTotal</a>.</p>
-  </div>
+  <details class="safe" id="whats-new">
+   <summary>What’s new in 1.4.2</summary>
+   <div class="safe-body">
+    <p>A small release that makes the library easier to move around in, and tells you more when Sync can’t be sure of a tempo.</p>
+    <ul>
+     <li><strong>Style and instrument work together.</strong> On a style page, pick an instrument; on an instrument page, pick a style. For example Lo-fi, then Drums.</li>
+     <li><strong>A clearer sidebar.</strong> Bigger Instruments and Styles headings and a coloured star for each style. Melodic loops with no style are now called Unstyled loops and sit under “more”.</li>
+     <li><strong>Sync tells you when a loop has no tempo it can trust.</strong> A quiet line in the player, and one notice when you drag it out. One-shots never show it.</li>
+     <li><strong>Pick between two tempos.</strong> When a loop’s length fits two tempos equally well, such as 90 or 135 BPM, choose the right one with one click. It is kept when you scan again.</li>
+     <li><strong>The toolbar stays on one row</strong> in narrower windows.</li>
+    </ul>
+    <p><a href="https://github.com/rc0900989-rgb/hertzsync/releases">All versions and release notes</a></p>
+   </div>
+  </details>
+  <details class="safe" id="install-help">
+   <summary>Safe to install. Windows or macOS may still warn you: here is why and what to do</summary>
+   <div class="safe-body">
+    <p>Hertz Sync contains no malware, adware or third-party extras, and collects no data: your library never leaves your computer. Online, it only checks your license key (with an anonymous id for your computer) and asks GitHub whether a newer version is out.</p>
+    <p><b>Why a warning appears anyway:</b> both systems warn about any app from a new, independent developer that isn't yet signed with a paid certificate. It's about who published the file, not about anything found in it.</p>
+    <ul>
+     <li><b>Windows</b> "Windows protected your PC": click <i>More info</i>, then <i>Run anyway</i>.</li>
+     <li><b>macOS 15 Sequoia or later</b> "Hertz Sync Not Opened": click <i>Done</i>, open <i>System Settings → Privacy &amp; Security</i>, scroll down to "Hertz Sync was blocked…" and click <i>Open Anyway</i>, then <i>Open Anyway</i> again and enter your Mac password.</li>
+     <li><b>macOS 11 to 14</b> "can't be opened": right-click Hertz Sync in Applications, choose <i>Open</i>, then <i>Open</i> again.</li>
+     <li><b>macOS says the app "is damaged"</b>: open Terminal, run <code>xattr -dr com.apple.quarantine "/Applications/Hertz Sync.app"</code> and open the app again. This only removes the "downloaded from the internet" mark from Hertz Sync.</li>
+    </ul>
+    <p>You only do this once; after that Hertz Sync opens normally.</p>
+    <p>To check your download is the original, compare its SHA-256 with the one above (Windows: <code>certutil -hashfile HertzSync-Setup-x64.exe SHA256</code>; Mac: <code>shasum -a 256 HertzSync-macOS-AppleSilicon.dmg</code>). You can also scan it at <a href="https://www.virustotal.com/">VirusTotal</a>.</p>
+   </div>
+  </details>
+  <p class="note"><a href="https://github.com/rc0900989-rgb/hertzsync/releases">All versions and release notes</a></p>
  </div>
 </section>
 
-<section id="computers" data-label="Your computers">
+<section id="computers">
  <div class="wrap">
   <div class="seats">
    <div class="seats-text">
-    <span class="eyebrow">Already have Pro?</span>
     <h2>Move Pro to a new computer</h2>
-    <p>One key unlocks Pro on 3 computers at a time. Switching computers takes a minute, no emails, no waiting.</p>
+    <p>One key unlocks Pro on 3 computers at a time. Switching takes a minute: no emails, no waiting.</p>
     <ol class="seats-steps">
      <li><b>Old computer still works?</b> Open the Pro window in Hertz Sync and click <i>Deactivate on this computer</i>.</li>
      <li><b>Lost, sold or won't start?</b> Open your computers page, enter your license key and free its seat.</li>
@@ -306,7 +268,7 @@
  </div>
 </section>
 
-<section id="faq" class="band" data-label="FAQ">
+<section id="faq" class="band">
  <div class="wrap">
   <h2>Questions</h2>
   <div class="faq">
@@ -322,9 +284,10 @@
 <footer>
  <div class="wrap">
   <span>Hertz Sync is made by <b>Quillon Holden</b> at <b>Vykra</b>. © 2026 Vykra</span>
-  <span><a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds</a> · <a href="terms.html">Terms</a></span>
+  <span><a href="#computers">Move Pro to a new computer</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds</a> · <a href="terms.html">Terms</a></span>
  </div>
 </footer>
+<script src="rig.js"></script>
 <!-- Cloudflare Web Analytics: cookieless visit counts (see privacy.html) --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "53de6b1d5b154df18a50004d45ef5cc4"}'></script>
 </body>
 </html>
