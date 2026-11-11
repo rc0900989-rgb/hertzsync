@@ -552,3 +552,7 @@ h1,h2{font-weight:650}
 nav.links{gap:clamp(14px,1.6vw,26px);font-size:14px}
 @media(max-width:1180px){nav.links a:not(.btn){display:none}}
 .tile[id]{scroll-margin-top:84px}
+
+.film-link{max-width:980px;margin:14px auto 0;text-align:center;font-size:14.5px}
+.film-link a{color:var(--text-2);text-decoration:underline;text-underline-offset:3px}
+.film-link a:hover{color:var(--text)}
