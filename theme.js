@@ -17,18 +17,6 @@
       setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
 
-    // The film loads only when asked: no request to YouTube before the click.
-    var film = document.querySelector('.film[data-yt]');
-    if (film) film.addEventListener('click', function () {
-      if (film.querySelector('iframe')) return;
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + film.dataset.yt + '?rel=0&modestbranding=1&playsinline=1&autoplay=1';
-      f.title = 'Hertz Sync: every loop in your tempo and key';
-      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      f.referrerPolicy = 'strict-origin-when-cross-origin'; f.allowFullscreen = true;
-      film.textContent = ''; film.appendChild(f);
-    });
-
     var hdr = document.querySelector('header.top');
     var progress = function () {
       var max = document.documentElement.scrollHeight - window.innerHeight;

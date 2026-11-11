@@ -514,15 +514,6 @@ section.band .safe{border-top:1px solid var(--line-2);border-bottom:1px solid va
 .film-sec{padding:clamp(24px,calc(5*var(--vh)),56px) 0 0}
 .film{position:relative;aspect-ratio:16/9;max-width:980px;margin:0 auto;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
 .film iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.film-play{position:absolute;inset:0;width:100%;display:flex;align-items:center;justify-content:center;gap:20px;border:0;background:transparent;color:var(--text);cursor:pointer;text-align:left}
-.film-tri{width:72px;height:72px;border-radius:50%;background:var(--grad-short);position:relative;flex:none;transition:transform .2s}
-.film-tri::after{content:"";position:absolute;left:29px;top:22px;border-left:20px solid var(--on-accent);border-top:14px solid transparent;border-bottom:14px solid transparent}
-.film-play:hover .film-tri{transform:scale(1.07)}
-.film-cap{display:grid;gap:4px}
-.film-cap b{font:600 clamp(20px,2.6vw,30px)/1.1 var(--display);letter-spacing:-.025em}
-.film-cap small{font-size:15px;color:var(--text-2)}
-@media(max-width:560px){.film-tri{width:56px;height:56px}.film-tri::after{left:22px;top:16px;border-left-width:16px;border-top-width:11px;border-bottom-width:11px}.film-play{gap:14px}}
-
 /* ---------- Home, the Meta way: white, one big idea, pill buttons, a large soft-rounded product stage ---------- */
 .btn,.btn-sm,.hear-btn,.ab,.ab-btn{border-radius:999px}
 .btn{padding:0 28px}
@@ -581,3 +572,5 @@ html{zoom:1.1}
 @media(max-height:780px){.loops .loop:nth-child(4){display:none}}
 /* Headline: slightly looser tracking; the first line is the wider one, the second tucks in under it. */
 .hero h1{letter-spacing:-.025em;max-width:12.6em;text-wrap:balance}
+
+.film{background:#000;border:0;box-shadow:var(--shadow)}
