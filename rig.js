@@ -58,9 +58,11 @@
     Array.prototype.forEach.call(rig.querySelectorAll('.rig-key'), function (b) { b.setAttribute('aria-pressed', b.dataset.k === key[0] ? 'true' : 'false'); });
   }
 
+  // The page opens at 110% (CSS zoom): rectangles are measured on screen, positions are set in page units.
+  function zoom() { var z = parseFloat(getComputedStyle(document.documentElement).zoom); return z > 0 ? z : 1; }
   function rel(node) {
-    var r = node.getBoundingClientRect(), o = rig.getBoundingClientRect();
-    return { x: r.left - o.left, y: r.top - o.top, w: r.width, h: r.height };
+    var r = node.getBoundingClientRect(), o = rig.getBoundingClientRect(), z = zoom();
+    return { x: (r.left - o.left) / z, y: (r.top - o.top) / z, w: r.width / z, h: r.height / z };
   }
   function stop() {
     clearTimeout(timer);
@@ -80,7 +82,7 @@
     cycles++;
     var src = rel(loop), dst = rel(placed), box = rig.getBoundingClientRect();
     var grab = { x: 90, y: 24 };
-    var P0 = { x: box.width - 36, y: box.height - 46 };
+    var P0 = { x: box.width / zoom() - 36, y: box.height / zoom() - 46 };
     var P1 = { x: src.x + 90, y: src.y + src.h / 2 };
     var P2 = { x: dst.x + dst.w * .55, y: dst.y + dst.h / 2 };
     var at = function (p) { return 'translate(' + p.x + 'px,' + p.y + 'px)'; };

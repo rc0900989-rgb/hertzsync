@@ -443,65 +443,65 @@ section.band .safe{border-top:1px solid var(--line-2);border-bottom:1px solid va
 .rig-keys{gap:2px}
 
 /* First screen is the whole opener: headline, buttons and the demo all fit without scrolling. */
-.hero{padding:clamp(20px,4.2vh,44px) 0 clamp(28px,5vh,56px)}
+.hero{padding:clamp(20px,calc(4.2*var(--vh)),44px) 0 clamp(28px,calc(5*var(--vh)),56px)}
 .hero-top{align-items:center;gap:48px;grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
-.hero h1{font-size:clamp(34px,min(5vw,8.6vh),64px);line-height:1.02;max-width:none}
-.lead{font-size:clamp(15px,min(1.4vw,2.3vh),19px);max-width:40ch}
+.hero h1{font-size:clamp(34px,min(5vw,calc(8.6*var(--vh))),64px);line-height:1.02;max-width:none}
+.lead{font-size:clamp(15px,min(1.4vw,calc(2.3*var(--vh))),19px);max-width:40ch}
 .hero-side{padding-bottom:0}
-.hero-side .cta{margin-top:clamp(14px,2.4vh,24px)}
-.hero-side .btn{height:clamp(40px,5.6vh,48px)}
-.facts{margin-top:clamp(10px,1.8vh,18px)}
-.rig{margin-top:clamp(20px,4vh,40px);border-radius:18px}
+.hero-side .cta{margin-top:clamp(14px,calc(2.4*var(--vh)),24px)}
+.hero-side .btn{height:clamp(40px,calc(5.6*var(--vh)),48px)}
+.facts{margin-top:clamp(10px,calc(1.8*var(--vh)),18px)}
+.rig{margin-top:clamp(20px,calc(4*var(--vh)),40px);border-radius:18px}
 .rig-bar{min-height:0}
-.rig-led{min-height:clamp(52px,7.4vh,64px)}
+.rig-led{min-height:clamp(52px,calc(7.4*var(--vh)),64px)}
 .rig-cell{padding:8px 22px}
-.rig-fig{font-size:clamp(28px,4.6vh,36px)}
-.pane{padding:clamp(14px,2.4vh,20px) 24px clamp(14px,2.6vh,22px)}
-.pane-title{margin-bottom:clamp(10px,1.8vh,14px)}
+.rig-fig{font-size:clamp(28px,calc(4.6*var(--vh)),36px)}
+.pane{padding:clamp(14px,calc(2.4*var(--vh)),20px) 24px clamp(14px,calc(2.6*var(--vh)),22px)}
+.pane-title{margin-bottom:clamp(10px,calc(1.8*var(--vh)),14px)}
 .loop{padding:10px 14px}
 .loop .mini{height:28px}
 .ruler{line-height:22px}
-.lane{height:clamp(34px,5.6vh,46px)}
+.lane{height:clamp(34px,calc(5.6*var(--vh)),46px)}
 .lane>b{top:5px;bottom:5px}
 .placed-bars{inset:17px 6px 6px}
 .lane>b.placed em{top:4px;font-size:10px}
 .rig-foot{padding:10px 24px 14px;font-size:12.5px}
 @media(max-width:860px){.hero-top{grid-template-columns:1fr}.hero{padding-top:28px}}
 /* The opener is exactly one screen, content centred in it; the rig's shadow is never clipped. */
-.hero{overflow:visible;min-height:calc(100svh - 60px);display:flex;align-items:center;padding-block:clamp(16px,3vh,40px)}
+.hero{overflow:visible;min-height:calc(calc(100*var(--svh)) - 60px);display:flex;align-items:center;padding-block:clamp(16px,calc(3*var(--vh)),40px)}
 .hero>.wrap{width:100%}
 @media(max-width:860px){.hero{min-height:0;display:block}}
 /* Top-aligned: no empty band above the headline, whatever the screen height. */
-.hero{min-height:0;display:block;padding:clamp(20px,3.4vh,40px) 0 clamp(32px,6vh,72px)}
+.hero{min-height:0;display:block;padding:clamp(20px,calc(3.4*var(--vh)),40px) 0 clamp(32px,calc(6*var(--vh)),72px)}
 @media(max-width:860px){.hero{padding-top:28px}}
 
 /* Opener, second pass: big headline right under the header, and the demo takes all the screen that is left. */
-.hero{height:calc(100svh - 60px);min-height:600px;display:flex;flex-direction:column;padding:clamp(10px,2vh,22px) 0 clamp(14px,2.6vh,26px)}
+.hero{height:calc(calc(100*var(--svh)) - 60px);min-height:600px;display:flex;flex-direction:column;padding:clamp(10px,calc(2*var(--vh)),22px) 0 clamp(14px,calc(2.6*var(--vh)),26px)}
 .hero>.wrap{flex:1;display:flex;flex-direction:column;min-height:0}
 .hero-top{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:40px;align-items:center}
-.hero h1{font-size:clamp(40px,min(5.4vw,8.4vh),80px);line-height:1;letter-spacing:-.045em}
-.lead{font-size:clamp(15px,min(1.4vw,2.3vh),19px)}
-.rig{flex:1;min-height:0;margin-top:clamp(14px,2.6vh,28px);display:flex;flex-direction:column}
+.hero h1{font-size:clamp(40px,min(5.4vw,calc(8.4*var(--vh))),80px);line-height:1;letter-spacing:-.045em}
+.lead{font-size:clamp(15px,min(1.4vw,calc(2.3*var(--vh))),19px)}
+.rig{flex:1;min-height:0;margin-top:clamp(14px,calc(2.6*var(--vh)),28px);display:flex;flex-direction:column}
 .scene{flex:1;min-height:0}
 .pane{display:flex;flex-direction:column;justify-content:center}
-.pane-title{font-size:clamp(12px,1.6vh,14px)}
-.loop{padding:clamp(12px,2vh,18px) 16px}
-.loop .name{font-size:clamp(14px,2vh,17px)}
-.loop .mini{height:clamp(28px,4.6vh,40px);width:clamp(96px,9vw,140px)}
-.ruler{line-height:clamp(22px,3.4vh,30px);font-size:clamp(10.5px,1.5vh,12px)}
-.lane{height:clamp(44px,8.4vh,78px)}
-.lane>b{top:clamp(5px,1vh,9px);bottom:clamp(5px,1vh,9px)}
-.placed-bars{inset:clamp(18px,3.2vh,26px) 7px clamp(6px,1.2vh,10px)}
-.lane>b.placed em{font-size:clamp(10px,1.5vh,12px);top:clamp(4px,.9vh,8px)}
-.rig-led{min-height:clamp(54px,8vh,72px)}
-.rig-fig{font-size:clamp(30px,5vh,42px)}
+.pane-title{font-size:clamp(12px,calc(1.6*var(--vh)),14px)}
+.loop{padding:clamp(12px,calc(2*var(--vh)),18px) 16px}
+.loop .name{font-size:clamp(14px,calc(2*var(--vh)),17px)}
+.loop .mini{height:clamp(28px,calc(4.6*var(--vh)),40px);width:clamp(96px,9vw,140px)}
+.ruler{line-height:clamp(22px,calc(3.4*var(--vh)),30px);font-size:clamp(10.5px,calc(1.5*var(--vh)),12px)}
+.lane{height:clamp(44px,calc(8.4*var(--vh)),78px)}
+.lane>b{top:clamp(5px,calc(1*var(--vh)),9px);bottom:clamp(5px,calc(1*var(--vh)),9px)}
+.placed-bars{inset:clamp(18px,calc(3.2*var(--vh)),26px) 7px clamp(6px,calc(1.2*var(--vh)),10px)}
+.lane>b.placed em{font-size:clamp(10px,calc(1.5*var(--vh)),12px);top:clamp(4px,.calc(9*var(--vh)),8px)}
+.rig-led{min-height:clamp(54px,calc(8*var(--vh)),72px)}
+.rig-fig{font-size:clamp(30px,calc(5*var(--vh)),42px)}
 .hero h1{margin:0}
 @media(max-width:860px){.hero{height:auto;min-height:0;display:block}.hero>.wrap{display:block}.rig{display:block}.pane{display:block}.hero-top{grid-template-columns:1fr}}
 
 /* Silent A/B switch (replaces the sound buttons) */
 .rig-say{display:flex;margin-left:auto;align-items:center;padding:0 26px;font-size:13.5px;color:var(--text-2)}
-.ab{display:inline-flex;margin-top:clamp(10px,1.8vh,16px);padding:3px;border:1px solid var(--line-2);border-radius:12px;gap:2px;align-self:flex-start}
-.ab-btn{height:clamp(32px,4.6vh,40px);padding:0 16px;border-radius:9px;border:0;background:transparent;color:var(--text-2);font:600 clamp(13px,1.8vh,14px)/1 var(--sans);cursor:pointer}
+.ab{display:inline-flex;margin-top:clamp(10px,calc(1.8*var(--vh)),16px);padding:3px;border:1px solid var(--line-2);border-radius:12px;gap:2px;align-self:flex-start}
+.ab-btn{height:clamp(32px,calc(4.6*var(--vh)),40px);padding:0 16px;border-radius:9px;border:0;background:transparent;color:var(--text-2);font:600 clamp(13px,calc(1.8*var(--vh)),14px)/1 var(--sans);cursor:pointer}
 .ab-btn:hover{color:var(--text)}
 .ab-btn[aria-pressed="true"]{background:var(--grad-short);color:var(--on-accent)}
 .rig.is-raw .lane>b.placed{border:1px dashed var(--text-3);background:transparent}
@@ -511,7 +511,7 @@ section.band .safe{border-top:1px solid var(--line-2);border-bottom:1px solid va
 @media(max-width:860px){.rig-say{margin-left:0;padding:0 26px 14px;width:100%}}
 
 /* The film: a plain 16:9 stage, loaded on click */
-.film-sec{padding:clamp(24px,5vh,56px) 0 0}
+.film-sec{padding:clamp(24px,calc(5*var(--vh)),56px) 0 0}
 .film{position:relative;aspect-ratio:16/9;max-width:980px;margin:0 auto;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
 .film iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .film-play{position:absolute;inset:0;width:100%;display:flex;align-items:center;justify-content:center;gap:20px;border:0;background:transparent;color:var(--text);cursor:pointer;text-align:left}
@@ -529,22 +529,22 @@ section.band .safe{border-top:1px solid var(--line-2);border-bottom:1px solid va
 .btn-sm{padding:0 20px}
 .rig-key,.rig-step{border-radius:999px}
 h1,h2{font-weight:650}
-.hero{background:linear-gradient(180deg,var(--bg) 0,var(--bg) 36%,var(--stage) 100%);padding-top:clamp(14px,3vh,34px)}
-.hero-top{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(10px,1.8vh,18px)}
-.hero h1{font-size:clamp(38px,min(6vw,9.2vh),84px);line-height:1.02;letter-spacing:-.05em;max-width:15ch;text-wrap:balance;margin:0 auto}
+.hero{background:linear-gradient(180deg,var(--bg) 0,var(--bg) 36%,var(--stage) 100%);padding-top:clamp(14px,calc(3*var(--vh)),34px)}
+.hero-top{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(10px,calc(1.8*var(--vh)),18px)}
+.hero h1{font-size:clamp(38px,min(6vw,calc(9.2*var(--vh))),84px);line-height:1.02;letter-spacing:-.05em;max-width:15ch;text-wrap:balance;margin:0 auto}
 .hero-side{display:flex;flex-direction:column;align-items:center;max-width:640px}
-.lead{max-width:48ch;font-size:clamp(16px,min(1.5vw,2.4vh),20px);margin:0 auto}
-.hero-side .cta{justify-content:center;margin-top:clamp(12px,2.2vh,22px)}
+.lead{max-width:48ch;font-size:clamp(16px,min(1.5vw,calc(2.4*var(--vh))),20px);margin:0 auto}
+.hero-side .cta{justify-content:center;margin-top:clamp(12px,calc(2.2*var(--vh)),22px)}
 .facts{justify-content:center}
-.rig{border-radius:28px;border-color:transparent;box-shadow:var(--shadow);margin-top:clamp(16px,3vh,32px)}
+.rig{border-radius:28px;border-color:transparent;box-shadow:var(--shadow);margin-top:clamp(16px,calc(3*var(--vh)),32px)}
 @media(max-height:820px){.facts{display:none}}
 .hero .rig-led,.rig-bar{background:transparent}
 :root[data-theme="light"] .rig{background:#fff}
 :root[data-theme="light"] .tag{background:#fff}
 /* The centred opener uses more height for type, so the stage's lanes are a little slimmer to stay inside it. */
-.lane{height:clamp(30px,5.6vh,58px)}
-.pane{padding-top:clamp(10px,1.8vh,18px);padding-bottom:clamp(10px,1.8vh,18px)}
-.ruler{line-height:clamp(20px,3vh,26px)}
+.lane{height:clamp(30px,calc(5.6*var(--vh)),58px)}
+.pane{padding-top:clamp(10px,calc(1.8*var(--vh)),18px);padding-bottom:clamp(10px,calc(1.8*var(--vh)),18px)}
+.ruler{line-height:clamp(20px,calc(3*var(--vh)),26px)}
 .rig{overflow:hidden}
 .scene{overflow:hidden}
 
@@ -556,3 +556,26 @@ nav.links{gap:clamp(14px,1.6vw,26px);font-size:14px}
 .film-link{max-width:980px;margin:14px auto 0;text-align:center;font-size:14.5px}
 .film-link a{color:var(--text-2);text-decoration:underline;text-underline-offset:3px}
 .film-link a:hover{color:var(--text)}
+
+/* Opens at 110%: the page is set a little larger, and the visitor can still zoom either way. */
+html{zoom:1.1}
+:root{--vh:calc(1vh / 1.1);--svh:calc(1svh / 1.1)}
+
+/* Library list: five loops, the first one is the one that gets dragged. */
+.loops{gap:clamp(5px,1vh,9px)}
+.loop{padding:clamp(7px,1.3vh,11px) 14px}
+.loop .name{font-size:clamp(13px,1.8vh,15.5px)}
+.loop .meta{font-size:clamp(11.5px,1.5vh,12.5px)}
+.loop .mini{height:clamp(22px,3.6vh,30px)}
+.loop:not(#loop-main){background:transparent;border-color:transparent}
+.loop.is-picked,#loop-main{background:var(--surface-hi);border-color:var(--line)}
+/* One-line library rows so five loops fit beside the timeline; the headline width is set in em so it wraps the same with any font. */
+.hero h1{max-width:11.8em}
+.loop{grid-template-columns:minmax(0,1fr) auto auto;column-gap:14px;padding:clamp(6px,1.1vh,10px) 14px}
+.loop .name{grid-column:1;grid-row:1}
+.loop .meta{grid-column:2;grid-row:1;white-space:nowrap}
+.loop .mini{grid-column:3;grid-row:1;width:clamp(52px,5.2vw,76px);height:clamp(16px,2.6vh,22px)}
+.pane:first-child .pane-title{margin-bottom:clamp(6px,1.2vh,12px)}
+/* Shorter screens show four loops; the first screen always fits whole. */
+@media(max-height:1000px){.loops .loop:nth-child(5){display:none}.loop{padding-block:5px}}
+@media(max-height:780px){.loops .loop:nth-child(4){display:none}}
