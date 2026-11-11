@@ -579,3 +579,5 @@ html{zoom:1.1}
 /* Shorter screens show four loops; the first screen always fits whole. */
 @media(max-height:1000px){.loops .loop:nth-child(5){display:none}.loop{padding-block:5px}}
 @media(max-height:780px){.loops .loop:nth-child(4){display:none}}
+/* Headline: slightly looser tracking; the first line is the wider one, the second tucks in under it. */
+.hero h1{letter-spacing:-.025em;max-width:12.6em;text-wrap:balance}
