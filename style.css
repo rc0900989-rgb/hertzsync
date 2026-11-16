@@ -172,7 +172,8 @@ section.band .card,section.band .tile,section.band .plan,section.band .safe,sect
 
 /* Download */
 .download{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
-.download .card{padding:36px}
+.download .card{display:flex;flex-direction:column;padding:36px}
+.download .card>.btn{align-self:flex-start;margin-top:auto}
 .download .card p{margin-bottom:22px}
 .download .hash{margin:22px 0 0;font-size:12.5px;color:var(--text-3);line-height:1.5}
 .download .hash code{display:block;word-break:break-all;font-size:11.5px;color:var(--text-2);margin-top:4px}
